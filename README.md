@@ -5,7 +5,7 @@ A minimal implementation OAI-PMH repository
 * [OAI Protocol](http://www.openarchives.org/OAI/openarchivesprotocol.html)
 * [Minimal Repository Implementation](http://www.openarchives.org/OAI/2.0/guidelines-repository.htm#MinimalImplementation)
 
-# Supported Verbs
+## Supported Verbs
 
 1. GetRecord
 2. Identify
@@ -14,11 +14,11 @@ A minimal implementation OAI-PMH repository
 5. ListRecords
 6. ListSets
 
-# Supported Metadata Formats
+## Supported Metadata Formats
 
 1. Dublin Core
 
-# Unique Identifier
+## Unique Identifier
 
 See: [Definitions and Concepts 2.4 Unique Idenfifier](http://www.openarchives.org/OAI/openarchivesprotocol.html#UniqueIdentifier)
 
