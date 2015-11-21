@@ -22,5 +22,5 @@ A minimal implementation OAI-PMH repository
 
 See: [Definitions and Concepts 2.4 Unique Idenfifier](http://www.openarchives.org/OAI/openarchivesprotocol.html#UniqueIdentifier)
 
-<identifier> ::= "urn:" <auto-increment-field-name> ":" <auto-increment-number>
+&lt;identifier&gt; ::= "urn:" &lt;auto-increment-field-name&gt; ":" &lt;auto-increment-number&gt;
 
