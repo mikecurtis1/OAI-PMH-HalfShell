@@ -24,3 +24,4 @@ See: [Definitions and Concepts 2.4 Unique Idenfifier](http://www.openarchives.or
 
 &lt;identifier&gt; ::= "urn:" &lt;domain-name&gt; "/" &lt;database-name&gt; ":" &lt;table-name&gt; ":" &lt;internal-id&gt;
 
+ex. urn:example.com/half_shell:books:BK160
