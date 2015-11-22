@@ -25,3 +25,7 @@ See: [Definitions and Concepts 2.4 Unique Idenfifier](http://www.openarchives.or
 `<identifier> ::= "urn:" <domain-name> "/" <database-name> ":" <table-name> ":" <internal-id>`
 
 ex. `urn:example.com/half_shell:books:BK160`
+
+## Set Specification
+
+HalfShell supports a two-level set heirarchy: `root_set` and `sub_set`.
