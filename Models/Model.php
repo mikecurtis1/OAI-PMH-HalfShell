@@ -2,6 +2,8 @@
 
 /*
 
+http://webservices.itcs.umich.edu/mediawiki/oaibp/index.php/Deleted_Record_Example_1
+
 SELECT 
     CONCAT('urn:example.com/half_shell:books:', `identifier`) AS `identifier`, 
     `modified`, 
