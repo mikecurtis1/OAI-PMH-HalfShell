@@ -31,3 +31,11 @@ ex. `urn:example.com/half_shell:books:BK160`
 See: [Definitions and Concepts 2.6 Set](http://www.openarchives.org/OAI/openarchivesprotocol.html#Set)
 
 HalfShell supports a two-level set heirarchy: `root_set` and `sub_set`.
+
+## Deleted Records
+
+See: [2.5.1 Deleted records](http://www.openarchives.org/OAI/openarchivesprotocol.html#DeletedRecords)
+See: [Best Practices for OAI... at Digital Library Federation](http://webservices.itcs.umich.edu/mediawiki/oaibp/index.php/Deleted_Record_Example_1)
+
+Half-Shell supports persistent deleted records. If a record's status field is set to 0 (zero) its 
+header tag will contain the `status="deleted"` attribute.
