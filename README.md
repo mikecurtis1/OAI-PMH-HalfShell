@@ -30,7 +30,10 @@ ex. `urn:example.com/half_shell:books:BK160`
 
 See: [Definitions and Concepts 2.6 Set](http://www.openarchives.org/OAI/openarchivesprotocol.html#Set)
 
-HalfShell supports a two-level set heirarchy: `root_set` and `sub_set`.
+HalfShell supports a two-level set heirarchy: set and sub-set.
+
+Records are placed into sets by setting values in the `root_set` and `sub_set` record 
+fields. These fields take numeric values and are mapped to relational tables of set and sub-set names.
 
 ## Deleted Records
 
