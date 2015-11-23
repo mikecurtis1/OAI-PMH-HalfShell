@@ -28,4 +28,6 @@ ex. `urn:example.com/half_shell:books:BK160`
 
 ## Set Specification
 
+See: [Definitions and Concepts 2.6 Set](http://www.openarchives.org/OAI/openarchivesprotocol.html#Set)
+
 HalfShell supports a two-level set heirarchy: `root_set` and `sub_set`.
