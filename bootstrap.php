@@ -170,6 +170,12 @@ if ( is_file(dirname(__FILE__) . $view_path  . OAI_VIEW) ) {
 }
 */
 
+require_once dirname(__FILE__) . '/Controller/OAIIdentifier.php';
+require_once dirname(__FILE__) . '/Models/ModelInterface.php';
+require_once dirname(__FILE__) . '/Models/Model.php';
+require_once dirname(__FILE__) . '/Models/ModelListSets.php';
+require_once dirname(__FILE__) . '/Models/ModelGetRecord.php';
+
 require_once dirname(__FILE__) . '/Config.php';
 $config = new Config();
 

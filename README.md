@@ -7,16 +7,16 @@ A minimal implementation OAI-PMH repository
 
 ## Supported Verbs
 
-1. GetRecord
-2. Identify
-3. ListIdentifiers
-4. ListMetadataFormats
-5. ListRecords
-6. ListSets
+* [GetRecord](http://www.openarchives.org/OAI/openarchivesprotocol.html#GetRecord)
+* [Identify](http://www.openarchives.org/OAI/openarchivesprotocol.html#Identify)
+* [ListIdentifiers](http://www.openarchives.org/OAI/openarchivesprotocol.html#ListIdentifiers)
+* [ListMetadataFormats](http://www.openarchives.org/OAI/openarchivesprotocol.html#ListMetadataFormats)
+* [ListRecords](http://www.openarchives.org/OAI/openarchivesprotocol.html#ListRecords)
+* [ListSets](http://www.openarchives.org/OAI/openarchivesprotocol.html#ListSets)
 
 ## Supported Metadata Formats
 
-1. Dublin Core
+* [Dublin Core](http://www.openarchives.org/OAI/openarchivesprotocol.html#dublincore)
 
 ## Unique Identifier
 

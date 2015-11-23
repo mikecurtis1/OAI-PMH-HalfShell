@@ -5,7 +5,7 @@ class Controller
     private $verbs = array('GetRecord', 'Identify', 'ListIdentifiers', 'ListMetadataFormats', 'ListRecords', 'ListSets');
     private $verb = '';
     private $metadataprefix = 'oai_dc';
-    private $identifier = '';
+    private $identifier = false;
     private $set = '';
     private $from = '';
     private $until = '';
@@ -18,8 +18,10 @@ class Controller
         $this->setSet($http_request);
         $this->setFrom($http_request);
         $this->setUntil($http_request);
-        #echo var_dump($config);
-        $view->renderTemplate($http_request, $config);
+        $model = $this->buildModel();
+        $model->connectSQL($config);
+        $model->composeSQL();
+        $view->renderTemplate($http_request, $config, $model);
     }
     
     private function setVerb($http_request)
@@ -36,7 +38,7 @@ class Controller
     
     private function setIdentifier($http_request)
     {
-        $this->identifier = $http_request->getKEV('identifier');
+        $this->identifier = OAIIdentifier::build($http_request->getKEV('identifier'));
     }
     
     private function setSet($http_request)
@@ -52,5 +54,16 @@ class Controller
     private function setUntil($http_request)
     {
         $this->until = $http_request->getKEV('until');
+    }
+    
+    private function buildModel()
+    {
+        if ($this->verb === 'ListSets') {
+            return new ModelListSets();
+        } elseif ($this->verb === 'GetRecord') {
+            return new ModelGetRecord($this->identifier);
+        } else {
+            return null;
+        }
     }
 }
