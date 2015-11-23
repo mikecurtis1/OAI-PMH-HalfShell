@@ -34,8 +34,7 @@ HalfShell supports a two-level set heirarchy: `root_set` and `sub_set`.
 
 ## Deleted Records
 
-See: [2.5.1 Deleted records](http://www.openarchives.org/OAI/openarchivesprotocol.html#DeletedRecords)
-
+See: [2.5.1 Deleted records](http://www.openarchives.org/OAI/openarchivesprotocol.html#DeletedRecords)  
 See: [Best Practices for OAI... at Digital Library Federation](http://webservices.itcs.umich.edu/mediawiki/oaibp/index.php/Deleted_Record_Example_1)
 
 Half-Shell supports persistent deleted records. If a record's status field is set to 0 (zero) its 
