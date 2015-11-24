@@ -61,7 +61,7 @@ With user input:
 
 Notes
 
-* Only Dublin Core metadata format is supported so parameter &metadataPrefix= only accepts value `oai_dc`
+* Only Dublin Core metadata format is supported so parameter `&metadataPrefix=` only accepts value `oai_dc`
 * If optional parameter `&from=` is omitted, the value configured for `earliest_datestamp` will be used
 * If optional parameter `&until=` is omitted, the current date will be used
 * If the optional paramter `&set=` is omitted, all records within the date range will be returned
