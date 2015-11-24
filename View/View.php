@@ -22,6 +22,7 @@ class View
     }
     
     //TODO: move this into controller and extend the View for each template
+    //TODO: views for each verb need to implement error response per. the protocol, see docu. each verb
     private function setOAITemplate($http_request, $config)
     {
         if (! $config->validVerb($http_request->getKEV('verb'))) {
