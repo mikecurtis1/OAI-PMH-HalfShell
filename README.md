@@ -42,3 +42,19 @@ See: [Best Practices for OAI... at Digital Library Federation](http://webservice
 
 Half-Shell supports persistent deleted records. If a record's status field is set to 0 (zero) its 
 header tag will contain the `status="deleted"` attribute.
+
+## Usage: URL Parameters for Accessing the Repository
+
+<!-- https://en.wikipedia.org/wiki/Usage_message -->
+
+No user input:
+
+* Identify `index.php?verb=Identify`
+* ListSets `index.php?verb=ListSets`
+* ListMetadataFormats `index.php?verb=ListMetadataFormats`
+
+With user input: 
+
+* GetRecord `index.php?verb=GetRecord &identifier=<identifier> &metadataPrefix=oai_dc`
+* ListIdentifiers `index.php?verb=ListIdentifiers &metadataPrefix=oai_dc [&from=UTCdatetime][&until=UTCdatetime][&set=setSpec ]`
+* GetRecords `index.php?verb=GetRecords &metadataPrefix=oai_dc [&from=UTCdatetime][&until=UTCdatetime][&set=setSpec ]`
