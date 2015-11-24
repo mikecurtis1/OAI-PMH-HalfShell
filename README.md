@@ -56,5 +56,12 @@ No user input:
 With user input: 
 
 * GetRecord `index.php?verb=GetRecord &identifier=<identifier> &metadataPrefix=oai_dc`
-* ListIdentifiers `index.php?verb=ListIdentifiers &metadataPrefix=oai_dc [&from=UTCdatetime][&until=UTCdatetime][&set=setSpec ]`
-* GetRecords `index.php?verb=GetRecords &metadataPrefix=oai_dc [&from=UTCdatetime][&until=UTCdatetime][&set=setSpec ]`
+* ListIdentifiers `index.php?verb=ListIdentifiers &metadataPrefix=oai_dc [&from=<UTCdatetime>][&until=<UTCdatetime>][&set=<setSpec>]`
+* GetRecords `index.php?verb=GetRecords &metadataPrefix=oai_dc [&from=<UTCdatetime>][&until=<UTCdatetime>][&set=<setSpec>]`
+
+Notes
+
+* Only Dublin Core metadata format is supported so parameter &metadataPrefix= only accepts value `oai_dc`
+* If optional parameter `&from=` is omitted, the value configured for `earliest_datestamp` will be used
+* If optional parameter `&until=` is omitted, the current date will be used
+* If the optional paramter `&set=` is omitted, all records within the date range will be returned
