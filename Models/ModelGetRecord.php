@@ -1,6 +1,6 @@
 <?php 
 
-class ModelGetRecord extends Model implements ModelInterface
+class ModelGetRecord extends AbstractModel implements ModelInterface
 {
     private $identifier = null;
     

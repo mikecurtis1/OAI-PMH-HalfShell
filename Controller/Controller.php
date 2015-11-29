@@ -2,68 +2,43 @@
 
 class Controller
 {
-    private $verbs = array('GetRecord', 'Identify', 'ListIdentifiers', 'ListMetadataFormats', 'ListRecords', 'ListSets');
-    private $verb = '';
-    private $metadataprefix = 'oai_dc';
-    private $identifier = false;
-    private $set = '';
-    private $from = '';
-    private $until = '';
     
-    public function __construct(HTTPRequest $http_request, Config $config, View $view)
+    public function __construct(HTTPRequest $http_request, Config $config)
     {
-        $this->setVerb($http_request);
-        $this->setMetadataPrefix($http_request);
-        $this->setIdentifier($http_request);
-        $this->setSet($http_request);
-        $this->setFrom($http_request);
-        $this->setUntil($http_request);
-        $model = $this->buildModel();
-        $model->connectSQL($config);
-        $model->composeSQL();
-        $view->renderTemplate($http_request, $config, $model);
-    }
-    
-    private function setVerb($http_request)
-    {
-        if (in_array($http_request->getKEV('verb'), $this->verbs)) {
-            $this->verb = $http_request->getKEV('verb');
-        }
-    }
-    
-    private function setMetadataPrefix($http_request)
-    {
-        $this->metadataprefix = $http_request->getKEV('metadataPrefix');
-    }
-    
-    private function setIdentifier($http_request)
-    {
-        $this->identifier = OAIIdentifier::build($http_request->getKEV('identifier'));
-    }
-    
-    private function setSet($http_request)
-    {
-        $this->set = $http_request->getKEV('set');
-    }
-    
-    private function setFrom($http_request)
-    {
-        $this->from = $http_request->getKEV('from');
-    }
-    
-    private function setUntil($http_request)
-    {
-        $this->until = $http_request->getKEV('until');
-    }
-    
-    private function buildModel()
-    {
-        if ($this->verb === 'ListSets') {
-            return new ModelListSets();
-        } elseif ($this->verb === 'GetRecord') {
-            return new ModelGetRecord($this->identifier);
+        $view = $this->buildView($http_request, $config);
+        $model = $this->buildModel($http_request, $config);
+        if ($view && $model) {
+            $model->connectSQL($config);
+            $model->composeSQL();
+            $view->buildContent($model);
+            $view->renderTemplate();
+        } elseif ($view && $model === false) {
+            $view->buildContent($http_request, $config);
+            $view->renderTemplate();
         } else {
-            return null;
+            $view = new View($http_request, $config);
+            $view->buildContent($http_request, $config);
+            $view->renderTemplate();
         }
+    }
+    
+    private function buildView($http_request, $config)
+    {
+        $view_class = 'View' . $http_request->getKEV('verb');
+        if (class_exists($view_class)) {
+            return new $view_class($http_request, $config);
+        }
+        
+        return false;
+    }
+    
+    private function buildModel($http_request, $config)
+    {
+        $model_class = 'Model' . $http_request->getKEV('verb');
+        if (class_exists($model_class)) {
+            return new $model_class($http_request, $config);
+        }
+        
+        return false;
     }
 }

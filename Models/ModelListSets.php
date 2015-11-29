@@ -1,6 +1,6 @@
 <?php 
 
-class ModelListSets extends Model implements ModelInterface
+class ModelListSets extends AbstractModel implements ModelInterface
 {
     public function composeSQL()
     {

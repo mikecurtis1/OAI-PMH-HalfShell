@@ -171,8 +171,13 @@ if ( is_file(dirname(__FILE__) . $view_path  . OAI_VIEW) ) {
 */
 
 require_once dirname(__FILE__) . '/Controller/OAIIdentifier.php';
+require_once dirname(__FILE__) . '/View/AbstractView.php';
+require_once dirname(__FILE__) . '/View/View.php';
+require_once dirname(__FILE__) . '/View/ViewIdentify.php';
+require_once dirname(__FILE__) . '/View/ViewListMetadataFormats.php';
+require_once dirname(__FILE__) . '/View/ViewListSets.php';
 require_once dirname(__FILE__) . '/Models/ModelInterface.php';
-require_once dirname(__FILE__) . '/Models/Model.php';
+require_once dirname(__FILE__) . '/Models/AbstractModel.php';
 require_once dirname(__FILE__) . '/Models/ModelListSets.php';
 require_once dirname(__FILE__) . '/Models/ModelGetRecord.php';
 
@@ -183,10 +188,10 @@ require_once dirname(__FILE__) . '/Controller/HTTPRequest.php';
 $http_request = new HTTPRequest();
 #echo var_dump($http_request);
 
-require_once dirname(__FILE__) . '/View/View.php';
-$view = new View($http_request, $config);
+#require_once dirname(__FILE__) . '/View/View.php';
+#$view = new View($http_request, $config);
 #echo var_dump($view);
 
 require_once dirname(__FILE__) . '/Controller/Controller.php';
-$controller = new Controller($http_request, $config, $view);
+$controller = new Controller($http_request, $config);
 #echo var_dump($controller);
