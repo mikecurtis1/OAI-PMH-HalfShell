@@ -2,7 +2,7 @@
 
 class ViewIdentify extends AbstractView
 {
-    public function buildContent($http_request=null, $config=null)
+    public function buildContent(HTTPRequest $http_request, Config $config, $model=null)
     {
         $this->xml_content .= '<Identify>' . "\n";
         $this->xml_content .= "\t" . '<repositoryName>' . $config->getParam('repository_name') . '</repositoryName>' . "\n";

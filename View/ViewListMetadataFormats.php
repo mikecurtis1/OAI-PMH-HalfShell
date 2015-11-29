@@ -2,7 +2,7 @@
 
 class ViewListMetadataFormats extends AbstractView
 {
-    public function buildContent()
+    public function buildContent(HTTPRequest $http_request, Config $config, $model=null)
     {
         $this->xml_content .= '<ListMetadataFormats>' . "\n";
         $this->xml_content .= "\t" . '<metadataFormat>' . "\n";

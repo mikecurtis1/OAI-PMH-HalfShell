@@ -2,7 +2,7 @@
 
 class ViewListSets extends AbstractView
 {
-    public function buildContent($model=null)
+    public function buildContent(HTTPRequest $http_request, Config $config, $model=null)
     {
         $this->xml_content .= '<ListSets>' . "\n";
         foreach ($model->getSQLRows() as $row) {

@@ -32,5 +32,5 @@ abstract class AbstractView
         require_once 'document.xml.php';
     }
     
-    abstract public function buildContent();
+    abstract public function buildContent(HTTPRequest $http_request, Config $config, $model);
 }

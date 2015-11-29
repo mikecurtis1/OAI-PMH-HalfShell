@@ -2,11 +2,13 @@
 
 class ModelGetRecord extends AbstractModel implements ModelInterface
 {
-    private $identifier = null;
+    private $record_id = '';
     
-    public function __construct(OAIIdentifier $identifier)
+    public function __construct(HTTPRequest $http_request, Config $config)
     {
-        $this->identifier = $identifier;
+        if ($oai_identifier = OAIIdentifier::build($http_request->getKEV('identifier'))) {
+            $this->record_id = $oai_identifier->getRecordID();
+        }
     }
     
     public function composeSQL()
@@ -28,7 +30,7 @@ class ModelGetRecord extends AbstractModel implements ModelInterface
             ";
         try {
             $arr = array(
-                ':identifier'=>$this->identifier->getIdentifier()
+                ':identifier'=>$this->record_id
                 );
             $this->stmt = $this->dbh->prepare($sql);
             $this->stmt->execute($arr);

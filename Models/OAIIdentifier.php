@@ -7,7 +7,7 @@ class OAIIdentifier
     private $host = '';
     private $database = '';
     private $table = '';
-    private $identifier = '';
+    private $record_id = '';
     
     private function __construct($match)
     {
@@ -16,7 +16,7 @@ class OAIIdentifier
         $this->host = $match[2];
         $this->database = $match[3];
         $this->table = $match[4];
-        $this->identifier = $match[5];
+        $this->record_id = $match[5];
     }
     
     public static function build($urn='')
@@ -53,8 +53,8 @@ class OAIIdentifier
         return $this->table;
     }
     
-    public function getIdentifier()
+    public function getRecordID()
     {
-        return $this->identifier;
+        return $this->record_id;
     }
 }
