@@ -15,7 +15,13 @@ class ViewListIdentifiers extends AbstractView
     {
         $list_identifiers_content = '';
         if ($model instanceof ModelListIdentifiers) {
-            $list_identifiers_content = '';
+            foreach ($model->getSQLRows() as $row) {
+              $list_identifiers_content .= '<header status="' . $row['header_status'] . '">' . "\n";
+              $list_identifiers_content .= '<identifier>' . $row['identifier'] . '</identifier>' . "\n";
+              $list_identifiers_content .= '<datestamp>' . $row['modified'] . '</datestamp>' . "\n";
+              $list_identifiers_content .= '<setSpec>' . $row['setSpec'] . '</setSpec>' . "\n";
+              $list_identifiers_content .= '</header>' . "\n";
+            }
         }
         $this->xml_content .= '<ListIdentifiers>' . "\n";
         $this->xml_content .= $list_identifiers_content;

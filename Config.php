@@ -11,6 +11,7 @@ class Config
         $this->setVerbs();
         $this->setRequestAttrs();
         $this->setMetadataFormats();
+        $this->setFieldMap();
     }
     
     private function setAdminEmails()
@@ -51,6 +52,20 @@ class Config
                 $this->params['metadata_formats'][] = $metadata_format;
             }
         }
+    }
+    
+    private function setFieldMap()
+    {
+        foreach ($this->params as $param => $value) {
+            if (substr($param,0,10) === 'map_field_') {
+                $this->params['field_map'][substr($param,10)] = $value;
+            }
+        }
+    }
+    
+    public function getFieldMap()
+    {
+        return $this->params['field_map'];
     }
     
     public function getParamsArray()

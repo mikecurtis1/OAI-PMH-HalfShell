@@ -3,11 +3,13 @@
 class ModelGetRecord extends AbstractModel implements ModelInterface
 {
     private $record_id = '';
+    private $urn = '';
     
     public function __construct(HTTPRequest $http_request, Config $config)
     {
         if ($oai_identifier = OAIIdentifier::build($http_request->getKEV('identifier'))) {
             $this->record_id = $oai_identifier->getRecordID();
+            $this->urn = $oai_identifier->getURN();
         }
     }
     
@@ -43,5 +45,10 @@ class ModelGetRecord extends AbstractModel implements ModelInterface
     public function getIdentifier()
     {
         return $this->identifier;
+    }
+    
+    public function getURN()
+    {
+        return $this->urn;
     }
 }
