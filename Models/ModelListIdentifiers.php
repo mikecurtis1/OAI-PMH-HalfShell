@@ -19,7 +19,6 @@ class ModelListIdentifiers extends AbstractModel implements ModelInterface
         $this->until = date("Y:m:d H:i:s");
       }
       if ($http_request->getKEV('set') !== '') {
-        //TODO: handle partial set specs, split value on comma(?)
         //HACK: append wildcard for quick partial set match
         $this->set = $http_request->getKEV('set') . '%';
       } else {
@@ -30,7 +29,7 @@ class ModelListIdentifiers extends AbstractModel implements ModelInterface
     public function composeSQL()
     {
         $sql = "
-          SELECT 
+        SELECT 
             `identifier`, 
             `modified`, 
             IF(`status` = 0, 'deleted', 'active') AS `header_status`, 
@@ -38,14 +37,14 @@ class ModelListIdentifiers extends AbstractModel implements ModelInterface
             `year`, 
             `title`, 
             `description`, 
-            `isbn`, 
+            CONCAT('urn:ISBN:', `isbn`) AS `isbn`, 
             `language_ISO639-3`, 
             CONCAT(`root_set`, ':', `sub_set`) AS `setSpec`
-          FROM `books`
-          WHERE 1=1
-          AND `modified` >= :from
-          AND `modified` <= :until
-          HAVING `setSpec` LIKE :set
+        FROM `collection`
+        WHERE 1=1
+        AND `modified` >= :from
+        AND `modified` <= :until
+        HAVING `setSpec` LIKE :set
         ";
         try {
             $this->stmt = $this->dbh->prepare($sql);

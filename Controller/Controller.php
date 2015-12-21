@@ -9,7 +9,7 @@ class Controller
         $model = $this->buildModel($http_request, $config);
         if ($view && $model) {
             $model->connectSQL($config);
-            $model->composeSQL();
+            $model->composeSQL($config);
             $view->buildContent($http_request, $config, $model);
             $view->renderTemplate();
         } elseif ($view && $model === false) {

@@ -16,8 +16,8 @@ require_once dirname(__FILE__) . '/Models/OAIIdentifier.php';
 require_once dirname(__FILE__) . '/Models/ModelInterface.php';
 require_once dirname(__FILE__) . '/Models/AbstractModel.php';
 require_once dirname(__FILE__) . '/Models/ModelListSets.php';
-require_once dirname(__FILE__) . '/Models/ModelListRecords.php';
 require_once dirname(__FILE__) . '/Models/ModelListIdentifiers.php';
+require_once dirname(__FILE__) . '/Models/ModelListRecords.php';
 require_once dirname(__FILE__) . '/Models/ModelGetRecord.php';
 require_once dirname(__FILE__) . '/Config.php';
 

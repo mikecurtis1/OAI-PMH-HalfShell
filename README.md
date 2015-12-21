@@ -55,9 +55,9 @@ No user input:
 
 With user input: 
 
-* GetRecord `index.php?verb=GetRecord &identifier=<identifier> &metadataPrefix=oai_dc`
-* ListIdentifiers `index.php?verb=ListIdentifiers &metadataPrefix=oai_dc [&from=<UTCdatetime>][&until=<UTCdatetime>][&set=<setSpec>]`
-* GetRecords `index.php?verb=GetRecords &metadataPrefix=oai_dc [&from=<UTCdatetime>][&until=<UTCdatetime>][&set=<setSpec>]`
+* GetRecord `index.php? verb=GetRecord &identifier=<identifier> &metadataPrefix=oai_dc`
+* ListIdentifiers `index.php? verb=ListIdentifiers &metadataPrefix=oai_dc [&from=<UTCdatetime>] [&until=<UTCdatetime>] [&set=<setSpec>]`
+* ListRecords `index.php? verb=ListRecords &metadataPrefix=oai_dc [&from=<UTCdatetime>] [&until=<UTCdatetime>] [&set=<setSpec>]`
 
 Notes
 

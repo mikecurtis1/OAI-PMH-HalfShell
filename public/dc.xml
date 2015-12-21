@@ -3,7 +3,6 @@
 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 xmlns:dc="http://purl.org/dc/elements/1.1/"
 xmlns:dcterms="http://purl.org/dc/terms/">
-    
     <dc:subject xsi:type="dcterms:LCSH">music</dc:subject>
     <dcterms:modified xsi:type="dcterms:W3CDTF">1970-01-01</dcterms:modified>
     <dc:identifier xsi:type="dcterms:URI">http://example.com</dc:identifier>

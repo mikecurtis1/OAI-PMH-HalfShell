@@ -24,10 +24,10 @@ class ModelGetRecord extends AbstractModel implements ModelInterface
                 `year`, 
                 `title`, 
                 `description`, 
-                `isbn`, 
+                CONCAT('urn:ISBN:', `isbn`) AS `isbn`, 
                 `language_ISO639-3`, 
                 CONCAT(`root_set`, ':', `sub_set`) AS `setSpec`
-            FROM `books`
+            FROM `collection` 
             WHERE `identifier` = :identifier
             ";
         try {
