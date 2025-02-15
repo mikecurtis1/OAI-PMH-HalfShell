@@ -44,7 +44,7 @@ class ModelGetRecord extends AbstractModel implements ModelInterface
     
     public function getIdentifier()
     {
-        return $this->identifier;
+        return $this->record_id;
     }
     
     public function getURN()
