@@ -1,0 +1,31 @@
+version: '3.8'
+
+services:
+  web:
+    build: .
+    ports:
+      - "8082:80"
+    volumes:
+      - ./src:/var/www/html 
+    depends_on:
+      - db
+    environment:
+      DB_HOST: db
+      DB_NAME: half_shell
+      DB_USER: oai_user
+      DB_PASS: oai_pass
+
+  db:
+    image: mysql:8.0
+    restart: always
+    environment:
+      MYSQL_DATABASE: half_shell
+      MYSQL_USER: oai_user
+      MYSQL_PASSWORD: oai_pass
+      MYSQL_ROOT_PASSWORD: rootpass
+    volumes:
+      - db_data:/var/lib/mysql
+      - ./src/sql:/docker-entrypoint-initdb.d
+
+volumes:
+  db_data:
