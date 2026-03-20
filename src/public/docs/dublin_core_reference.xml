@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Dublin Core encoding samples -->
+<!--
+Dublin Core reference example.
+
+This file is not used by the application at runtime.
+It was created as a development reference for selecting and formatting
+bibliographic fields in OAI-PMH responses.
+-->
 <metadata
 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 xmlns:dc="http://purl.org/dc/elements/1.1/"
