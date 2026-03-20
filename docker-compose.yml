@@ -14,6 +14,7 @@ services:
       DB_NAME: half_shell
       DB_USER: oai_user
       DB_PASS: oai_pass
+      APP_DEBUG: "true"
 
   db:
     image: mysql:8.0
@@ -29,3 +30,4 @@ services:
 
 volumes:
   db_data:
+

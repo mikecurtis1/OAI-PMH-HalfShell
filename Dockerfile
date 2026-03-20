@@ -12,11 +12,6 @@ RUN sed -i 's|/var/www/html|/var/www/html/public|g' /etc/apache2/sites-available
 # Enable .htaccess overrides
 RUN sed -i '/<Directory \/var\/www\/>/,/<\/Directory>/ s/AllowOverride None/AllowOverride All/' /etc/apache2/apache2.conf
 
-# Enable PHP error reporting (temporary for debugging)
-RUN echo "display_errors=On" >> /usr/local/etc/php/conf.d/debug.ini \
- && echo "display_startup_errors=On" >> /usr/local/etc/php/conf.d/debug.ini \
- && echo "error_reporting=E_ALL" >> /usr/local/etc/php/conf.d/debug.ini
-
 RUN echo "short_open_tag=On" >> /usr/local/etc/php/conf.d/short-tags.ini
 
 RUN chown -R www-data:www-data /var/www/html

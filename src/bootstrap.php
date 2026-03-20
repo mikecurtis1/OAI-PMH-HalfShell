@@ -1,9 +1,15 @@
 <?php 
 
-//NOTE: do not display errors in production
-ini_set('display_startup_errors',1);
-ini_set('display_errors',1);
-error_reporting(E_ALL);
+$debug = getenv('APP_DEBUG') === 'true';
+
+if ($debug) {
+    ini_set('display_startup_errors', 1);
+    ini_set('display_errors', 1);
+    error_reporting(E_ALL);
+} else {
+    ini_set('display_errors', 0);
+    error_reporting(0);
+}
 
 require_once dirname(__FILE__) . '/View/AbstractView.php';
 require_once dirname(__FILE__) . '/View/View.php';
