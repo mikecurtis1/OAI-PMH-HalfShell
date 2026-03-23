@@ -62,36 +62,36 @@ http://localhost:8082/index.php
 ### Example Requests
 
 Identify
-http://localhost:8082/index.php?verb=Identify
+* http://localhost:8082/index.php?verb=Identify
 
 ListMetadataFormats
-http://localhost:8082/index.php?verb=ListMetadataFormats
+* http://localhost:8082/index.php?verb=ListMetadataFormats
 
 ListSets
-http://localhost:8082/index.php?verb=ListSets
+* http://localhost:8082/index.php?verb=ListSets
 
 GetRecord
-http://localhost:8082/index.php?verb=GetRecord&identifier=identifier&metadataPrefix=oai_dc
+* http://localhost:8082/index.php?verb=GetRecord&identifier=identifier&metadataPrefix=oai_dc
 
 ListIdentifiers
-http://localhost:8082/index.php?verb=ListIdentifiers&metadataPrefix=oai_dc
+* http://localhost:8082/index.php?verb=ListIdentifiers&metadataPrefix=oai_dc
 
-Optional parameters:
-* from=`<UTCdatetime>`
-* until=`<UTCdatetime>`
-* set=`<setSpec>`
+* Optional parameters:
+  * from=`<UTCdatetime>`
+  * until=`<UTCdatetime>`
+  * set=`<setSpec>`
 
 ListRecords
-http://localhost:8082/index.php?verb=ListRecords&metadataPrefix=oai_dc
+* http://localhost:8082/index.php?verb=ListRecords&metadataPrefix=oai_dc
 
-Optional parameters:
-* from=`<UTCdatetime>`
-* until=`<UTCdatetime>`
-* set=`<setSpec>`
+* Optional parameters:
+  * from=`<UTCdatetime>`
+  * until=`<UTCdatetime>`
+  * set=`<setSpec>`
 
 Example:
 
-http://localhost:8082/index.php?verb=ListRecords&metadataPrefix=oai_dc&from=2026-02-07+00:00:00&until=2026-05-31+00:00:00&set=2:0
+* http://localhost:8082/index.php?verb=ListRecords&metadataPrefix=oai_dc&from=2026-02-07+00:00:00&until=2026-05-31+00:00:00&set=2:0
 
 ### Data Model Notes
 
