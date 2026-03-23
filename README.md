@@ -125,7 +125,9 @@ OAI-PMH-HalfShell/
     ├── View/
     ├── public/
     ├── sql/
-    └── bootstrap.php
+    ├── bootstrap.php
+    ├── Config.php
+    └── config.ini
 ```
 
 ### Design Notes
