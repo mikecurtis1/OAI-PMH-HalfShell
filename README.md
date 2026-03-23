@@ -57,7 +57,7 @@ docker compose up --build
 
 Once running, access the API at:
 
-http://localhost:8082/index.php
+* http://localhost:8082/index.php
 
 ### Example Requests
 
