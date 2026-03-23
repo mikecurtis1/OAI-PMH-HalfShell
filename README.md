@@ -61,11 +61,13 @@ Once running, access the API at:
 
 ### Unique Identifier
 
-See: [Definitions and Concepts 2.4 Unique Idenfifier](http://www.openarchives.org/OAI/openarchivesprotocol.html#UniqueIdentifier)
+The `identifier` parameter used in requests must conform to this URN format.
 
 `<identifier> ::= "urn:" <domain-name> "/" <database-name> ":" <table-name> ":" <internal-id>`
 
 ex. `urn:example.com/half_shell:books:BK160`
+
+See: [Definitions and Concepts 2.4 Unique Idenfifier](http://www.openarchives.org/OAI/openarchivesprotocol.html#UniqueIdentifier)
 
 ### Example Requests
 
@@ -97,7 +99,7 @@ ex. `urn:example.com/half_shell:books:BK160`
   * until=`<UTCdatetime>`
   * set=`<setSpec>`
 
-Example:
+Example request:
 
 * http://localhost:8082/index.php?verb=ListRecords&metadataPrefix=oai_dc&from=2026-02-07+00:00:00&until=2026-05-31+00:00:00&set=2:0
 
