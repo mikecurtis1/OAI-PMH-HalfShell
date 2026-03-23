@@ -59,6 +59,14 @@ Once running, access the API at:
 
 * http://localhost:8082/index.php
 
+### Unique Identifier
+
+See: [Definitions and Concepts 2.4 Unique Idenfifier](http://www.openarchives.org/OAI/openarchivesprotocol.html#UniqueIdentifier)
+
+`<identifier> ::= "urn:" <domain-name> "/" <database-name> ":" <table-name> ":" <internal-id>`
+
+ex. `urn:example.com/half_shell:books:BK160`
+
 ### Example Requests
 
 #### Identify
@@ -71,7 +79,7 @@ Once running, access the API at:
 * http://localhost:8082/index.php?verb=ListSets
 
 #### GetRecord
-* http://localhost:8082/index.php?verb=GetRecord&identifier=identifier&metadataPrefix=oai_dc
+* http://localhost:8082/index.php?verb=GetRecord&identifier=urn%3Aexample.com/half_shell%3Abooks%3ABK79&metadataPrefix=oai_dc
 
 #### ListIdentifiers
 * http://localhost:8082/index.php?verb=ListIdentifiers&metadataPrefix=oai_dc
