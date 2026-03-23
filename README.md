@@ -71,7 +71,7 @@ ListSets
 http://localhost:8082/index.php?verb=ListSets
 
 GetRecord
-http://localhost:8082/index.php?verb=GetRecord&identifier=<identifier>&metadataPrefix=oai_dc
+`http://localhost:8082/index.php?verb=GetRecord&identifier=<identifier>&metadataPrefix=oai_dc`
 
 ListIdentifiers
 http://localhost:8082/index.php?verb=ListIdentifiers&metadataPrefix=oai_dc
