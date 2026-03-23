@@ -53,7 +53,7 @@ This project follows a simple MVC (Model-View-Controller) pattern:
 
 ```bash
 docker compose up --build
-
+```
 
 Once running, access the API at:
 
@@ -101,7 +101,8 @@ Deleted records are retained and exposed via OAI-PMH status="deleted".
 
 ### Project Structure
 
-```OAI-PMH-HalfShell/
+```
+OAI-PMH-HalfShell/
 ├── Dockerfile
 ├── docker-compose.yml
 ├── README.md
@@ -115,7 +116,7 @@ Deleted records are retained and exposed via OAI-PMH status="deleted".
     ├── public/
     ├── sql/
     └── bootstrap.php
-
+```
 
 ### Design Notes
 
