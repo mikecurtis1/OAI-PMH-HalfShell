@@ -16,9 +16,9 @@ The project focuses on clarity of design and protocol behavior rather than full 
   - ListMetadataFormats
   - ListSets
 
-- Dublin Core (URL param `oai_dc`) metadata format
+- Dublin Core (URL param `metadataPrefix=oai_dc`) metadata format
 - Date range filtering (URL params `from`, `until`)
-- Set-based filtering (URL param `ListSets`)
+- Set-based filtering (URL param `set`)
 - Persistent deleted record support (XML attribute `status="deleted"`)
 - MySQL-backed data model
 - Fully containerized with Docker and Docker Compose
@@ -61,19 +61,19 @@ Once running, access the API at:
 
 ### Example Requests
 
-Identify
+#### Identify
 * http://localhost:8082/index.php?verb=Identify
 
-ListMetadataFormats
+#### ListMetadataFormats
 * http://localhost:8082/index.php?verb=ListMetadataFormats
 
-ListSets
+#### ListSets
 * http://localhost:8082/index.php?verb=ListSets
 
-GetRecord
+#### GetRecord
 * http://localhost:8082/index.php?verb=GetRecord&identifier=identifier&metadataPrefix=oai_dc
 
-ListIdentifiers
+#### ListIdentifiers
 * http://localhost:8082/index.php?verb=ListIdentifiers&metadataPrefix=oai_dc
 
 * Optional parameters:
@@ -81,7 +81,7 @@ ListIdentifiers
   * until=`<UTCdatetime>`
   * set=`<setSpec>`
 
-ListRecords
+#### ListRecords
 * http://localhost:8082/index.php?verb=ListRecords&metadataPrefix=oai_dc
 
 * Optional parameters:
@@ -95,9 +95,9 @@ Example:
 
 ### Data Model Notes
 
-Records are stored in MySQL and accessed via model classes.
-Sets are implemented as a two-level hierarchy (root_set, sub_set).
-Deleted records are retained and exposed via OAI-PMH status="deleted".
+* Records are stored in MySQL and accessed via model classes.
+* Sets are implemented as a two-level hierarchy (root_set, sub_set).
+* Deleted records are retained and exposed via OAI-PMH status="deleted".
 
 ### Project Structure
 
@@ -127,5 +127,5 @@ This project implements a minimal OAI-PMH repository based on:
 
 The name "HalfShell" is a reference to:
 
-The common nickname “OAI = oyster”
-A “half-shell” implementation focusing on core functionality
+* The common nickname “OAI = oyster”
+* A “half-shell” implementation focusing on core functionality
