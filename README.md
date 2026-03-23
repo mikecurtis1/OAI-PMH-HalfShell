@@ -16,10 +16,10 @@ The project focuses on clarity of design and protocol behavior rather than full 
   - ListMetadataFormats
   - ListSets
 
-- Dublin Core (`oai_dc`) metadata format
-- Date range filtering (`from`, `until`)
-- Set-based filtering
-- Persistent deleted record support (`status="deleted"`)
+- Dublin Core (URL param `oai_dc`) metadata format
+- Date range filtering (URL params `from`, `until`)
+- Set-based filtering (URL param `ListSets`)
+- Persistent deleted record support (XML attribute `status="deleted"`)
 - MySQL-backed data model
 - Fully containerized with Docker and Docker Compose
 
@@ -71,23 +71,23 @@ ListSets
 http://localhost:8082/index.php?verb=ListSets
 
 GetRecord
-`http://localhost:8082/index.php?verb=GetRecord&identifier=<identifier>&metadataPrefix=oai_dc`
+http://localhost:8082/index.php?verb=GetRecord&identifier=identifier&metadataPrefix=oai_dc
 
 ListIdentifiers
 http://localhost:8082/index.php?verb=ListIdentifiers&metadataPrefix=oai_dc
 
 Optional parameters:
-* from=<UTCdatetime>
-* until=<UTCdatetime>
-* set=<setSpec>
+* from=`<UTCdatetime>`
+* until=`<UTCdatetime>`
+* set=`<setSpec>`
 
 ListRecords
 http://localhost:8082/index.php?verb=ListRecords&metadataPrefix=oai_dc
 
 Optional parameters:
-* from=<UTCdatetime>
-* until=<UTCdatetime>
-* set=<setSpec>
+* from=`<UTCdatetime>`
+* until=`<UTCdatetime>`
+* set=`<setSpec>`
 
 Example:
 
