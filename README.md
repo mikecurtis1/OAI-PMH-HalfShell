@@ -1,6 +1,6 @@
 # OAI-PMH-HalfShell
 
-A minimal implementation of an OAI-PMH (Open Archives Initiative Protocol for Metadata Harvesting) repository, designed to demonstrate core protocol functionality in a lightweight, containerized environment. OAI is widely used by digital archives and research repositories such as arXiv and CERN.
+An MVC minimal implementation of an OAI-PMH (Open Archives Initiative Protocol for Metadata Harvesting) repository, designed to demonstrate core protocol functionality in a lightweight, containerized environment. OAI is widely used by digital archives and research repositories such as arXiv and CERN.
 
 The project focuses on clarity of design and protocol behavior rather than full production complexity.
 
