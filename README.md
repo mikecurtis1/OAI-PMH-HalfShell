@@ -142,9 +142,8 @@ The name "HalfShell" is a reference to:
 * The common nickname “OAI = oyster”
 * A “half-shell” implementation focusing on core functionality
 
-* ## License
+## License
 
-[![License: CC BY-SA 4.0](https://img.shields.io/badge/License-CC%20BY--SA%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-sa/4.0/)
+[![License: CC BY-NC-SA 4.0](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc-sa/4.0/)
 
-This work is licensed under a [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/).
-
+This project is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License.
